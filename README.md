@@ -27,14 +27,25 @@ Step 5 : Display l_len(# of numbers less than mid_val), u_len(# of numbers great
 
 Explanation:
 
-    First take the lower limit and upper limit of range from user. Calculate mid value from these two limits to separate the range into two parts upper range and lower range. Calculate the middle value of range.
+    First take the lower limit and upper limit of range from user. Calculate mid value from these two limits to 
+	separate the range into two parts upper range and lower range. Calculate the middle value of range.
 
-    Start the for loop that is to be run 100 times(It can be run as many times the user wants). In this loop random number is generated using Linear congruential generator(LCG) method in which an equation is used ie [new_seed = (c + a * previous_seed) % mod] and then 'new_seed' generated from this equation is put into [random = number / mod] (which will give output value between 0 and 1). And this value is put into a formula [lower limit + value * (upper limit - lower limit + 1)] to calculate random number in given desired range.
+    Start the for loop that is to be run 100 times(It can be run as many times the user wants).In this loop random number is
+	generated using Linear congruential generator(LCG) method in which an equation is used ie 
+	[new_seed = (c + a * previous_seed) % mod] and then 'new_seed' generated from this equation is put into 
+	[random = number / mod] (which will give output value between 0 and 1). 
+	And this value is put into a formula [lower limit + value * (upper limit - lower limit + 1)] to calculate random number 
+	in given desired range.
 
     The above method describes generation of random numbers. All the constants(a,c,m) are taken from wikipedia.
-    A number in range 1 to 100 is generated using LCG in every iteration which is unbiased i.e., each number in range 1 to 100 is equally likely to be chosen. Now, if the random number is greater than 73(total of 27 choices(100-73)) then again a random number is chosen in range [lowerlimit,middle value), otherwise a number is randomly chosen in range(middle value,upperlimit]. This ensures a 73/100 i.e., 73% biasness on numbers greater than middle value and a 27/100 i.e., 27% biasness on numbers less than middle value.
+    A number in range 1 to 100 is generated using LCG in every iteration which is unbiased i.e., each number in range 1 to 100
+	is equally likely to be chosen. Now, if the random number is greater than 73(total of 27 choices(100-73)) then again a random
+	number is chosen in range [lowerlimit,middle value), otherwise a number is randomly chosen in range(middle value,upperlimit].
+	This ensures a 73/100 i.e., 73% biasness on numbers greater than middle value and a 27/100 i.e., 27% biasness on numbers 
+	less than middle value.
     
-    All numbers are stored in a list and finally displayed along with their counts based on whether they are less than or greater than middle value of the range. 
+    All numbers are stored in a list and finally displayed along with their counts based on whether they are less than or 
+	greater than middle value of the range. 
 
     Then print final_list ie concatenated list of max_list and min_list
 
